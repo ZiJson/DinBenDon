@@ -2,5 +2,12 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "cSpell.words": ["clsx", "dinbendon", "lucide", "shadcn", "tailwindcss"]
+  "cSpell.words": [
+    "clsx",
+    "dinbendon",
+    "lucide",
+    "shadcn",
+    "tailwindcss",
+    "zustand"
+  ]
 }
