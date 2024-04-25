@@ -4,8 +4,6 @@
   "semi": false,
   "singleQuote": true,
   "useTabs": false,
-  "printWidth": 80,
-  "arrowParens": "avoid",
   "overrides": [
     {
       "files": "*.yaml",
