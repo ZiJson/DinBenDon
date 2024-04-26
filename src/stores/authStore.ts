@@ -10,6 +10,7 @@ interface State {
 }
 interface Actions {
   setActionType: (value: ActionType) => void
+  reset: () => void
 }
 
 const initialState: State = {
@@ -66,5 +67,6 @@ const initialState: State = {
 
 export const authStore = create<State & Actions>((set) => ({
   ...initialState,
-  setActionType: (value) => set({ actionType: value })
+  setActionType: (value: ActionType) => set({ actionType: value }),
+  reset: () => set({ ...initialState })
 }))
