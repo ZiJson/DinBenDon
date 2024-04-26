@@ -1,9 +1,13 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  RouteObject
+} from 'react-router-dom'
 import { PATHS } from './paths'
 import Layout from './layout'
 import * as Page from '@pages'
 
-const protectedRoutes = [
+const protectedRoutes: RouteObject[] = [
   {
     path: PATHS.ADMIN,
     element: <Page.Admin />,
