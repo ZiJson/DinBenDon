@@ -1,23 +1,15 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  RouteObject
-} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { PATHS } from './paths'
-import Layout from './layout'
+import ProtectedLayout from '@layouts/ProtectedLayout'
 import * as Page from '@pages'
-
-const protectedRoutes: RouteObject[] = [
-  {
-    path: PATHS.ADMIN,
-    element: <Page.Admin />,
-    children: []
-  }
-]
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
+    path: PATHS.LOGIN,
+    element: <Page.Login />
+  },
+  {
+    element: <ProtectedLayout />,
     children: [
       {
         path: PATHS.HOME,
@@ -25,15 +17,15 @@ const router = createBrowserRouter([
         children: []
       },
       {
-        path: PATHS.LOGIN,
-        element: <Page.Login />
-      },
-      {
-        path: PATHS.NOT_FOUND,
-        element: <Page.NotFound />
-      },
-      ...protectedRoutes
+        path: PATHS.ADMIN,
+        element: <Page.Admin />,
+        children: []
+      }
     ]
+  },
+  {
+    path: PATHS.NOT_FOUND,
+    element: <Page.NotFound />
   }
 ])
 
