@@ -4,5 +4,6 @@ export enum PATHS {
   REGISTER = '/register',
   SETTINGS = 'settings',
   MANAGE = 'manage',
-  NOT_FOUND = '*'
+  NOT_FOUND = '*',
+  ADMIN = '/admin'
 }
