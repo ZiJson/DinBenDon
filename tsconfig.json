@@ -31,7 +31,8 @@
       "@hooks": ["hooks"],
       "@routes": ["routes"],
       "@services": ["services"],
-      "@stores": ["stores"]
+      "@stores": ["stores"],
+      "@layouts": ["layouts"]
     }
   },
   "include": ["src"],
