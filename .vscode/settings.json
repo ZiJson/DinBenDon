@@ -8,6 +8,7 @@
     "lucide",
     "shadcn",
     "tailwindcss",
+    "Uncurried",
     "zustand"
   ]
 }
