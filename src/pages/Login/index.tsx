@@ -1,7 +1,59 @@
-import { authStore } from '@stores'
+import { userStore } from '@stores'
+import type { ActionType } from '@stores/userStore'
+
+const fields: Record<ActionType, { id: string; name: string }[]> = {
+  login: [
+    {
+      id: 'account',
+      name: '帳號'
+    },
+    {
+      id: 'password',
+      name: '密碼'
+    }
+  ],
+  register: [
+    {
+      id: 'account',
+      name: '帳號'
+    },
+    {
+      id: 'password',
+      name: '密碼'
+    },
+    {
+      id: 'confirmPassword',
+      name: '確認密碼'
+    }
+  ]
+}
+
+const buttons: Record<ActionType, { id: 'button' | 'submit'; text: string }[]> =
+  {
+    login: [
+      {
+        id: 'button',
+        text: '前往註冊'
+      },
+      {
+        id: 'submit',
+        text: '登陸'
+      }
+    ],
+    register: [
+      {
+        id: 'button',
+        text: '返回登陸'
+      },
+      {
+        id: 'submit',
+        text: '註冊'
+      }
+    ]
+  }
 
 function Login() {
-  const { fields, buttons, actionType, setActionType } = authStore()
+  const { actionType, setActionType } = userStore()
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault()
@@ -13,9 +65,9 @@ function Login() {
         onSubmit={onSubmit}
         className="flex flex-col items-center justify-center gap-10"
       >
-        {fields[actionType].map(({ id, label }) => (
+        {fields[actionType].map(({ id, name }) => (
           <label key={id}>
-            <p>{label}</p>
+            <p>{name}</p>
             <input id={id} className="border-2 border-slate-500" type="text" />
           </label>
         ))}
