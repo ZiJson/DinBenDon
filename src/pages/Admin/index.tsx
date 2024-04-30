@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { fetchAllShops } from '@api/queries/shop'
+import { fetchAllShops } from '@services/queries/shop'
 
 const Admin = () => {
   const { data } = useQuery({ queryKey: ['allShops'], queryFn: fetchAllShops })
