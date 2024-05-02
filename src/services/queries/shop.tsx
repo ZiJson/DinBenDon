@@ -4,7 +4,7 @@ export const fetchAllShops = async (): Promise<Shop[]> => {
 }
 
 // 之後移到@type
-interface Shop {
+export interface Shop {
   shopName: string
   phone: string
   address: string

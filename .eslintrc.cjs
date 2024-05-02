@@ -19,8 +19,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true }
     ],
-    'no-console': ['error', { allow: ['warn', 'error'] }],
-    '@typescript-eslint/consistent-type-definitions': 'off'
+    'react/prop-types': [2, { ignore: ['className'] }]
   },
   parserOptions: {
     ecmaVersion: 'latest',
@@ -29,3 +28,4 @@ module.exports = {
     tsconfigRootDir: __dirname
   }
 }
+

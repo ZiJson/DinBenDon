@@ -18,8 +18,16 @@ const router = createBrowserRouter([
       },
       {
         path: PATHS.ADMIN,
-        element: <Page.Admin />,
-        children: []
+        children: [
+          {
+            path: '',
+            element: <Page.Admin />
+          },
+          {
+            path: PATHS.ADD_SHOP,
+            element: <Page.AddShop />
+          }
+        ]
       }
     ]
   },
